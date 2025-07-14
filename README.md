@@ -1,6 +1,6 @@
 # Task-manager-React-TS-
 
-## Ссылка на гитхаб: https://github.com/serjobor/Task-manager-React-TS-
+# Ссылка на деплой:
 
 ## Запуск
  - Скачайте файлы
