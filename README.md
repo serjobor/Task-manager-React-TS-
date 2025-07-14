@@ -1,4 +1,7 @@
 # Task-manager-React-TS-
+
+## Ссылка на гитхаб: https://github.com/serjobor/Task-manager-React-TS-
+
 ## Запуск
  - Скачайте файлы
  - перейдите в папку "task-manager"
