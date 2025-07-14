@@ -1,6 +1,6 @@
 # Task-manager-React-TS-
 
-# Ссылка на деплой:
+# Ссылка на деплой: https://tk-manager.vercel.app/
 
 ## Запуск
  - Скачайте файлы
