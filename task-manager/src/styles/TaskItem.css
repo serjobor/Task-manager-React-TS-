@@ -12,14 +12,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  margin-bottom: 15px;
 }
 
 .taskItem__title {
   font-size: 1.2rem;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   color: #2c3e50;
   border-bottom: 1px solid #eee;
-  padding-bottom: 10px;
+  /* padding-bottom: 10px; */
 
   max-width: 300px;
   max-height: 35px;
