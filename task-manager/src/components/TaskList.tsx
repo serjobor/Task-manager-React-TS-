@@ -6,10 +6,11 @@ import TaskItem from './TaskItem'
 
 
 interface TaskLisTProps {
-  tasks: ITask[]
+  tasks: ITask[];
+  onDelete: (taskId: number) => void;
 }
 
-const TaskList: FC<TaskLisTProps> = ({tasks}) => {
+const TaskList: FC<TaskLisTProps> = ({tasks, onDelete}) => {
   return (
     <>    
     <h1>Task List</h1>
@@ -17,7 +18,11 @@ const TaskList: FC<TaskLisTProps> = ({tasks}) => {
     <div className='task__list'>
       {
         tasks.map((task) => (
-          <TaskItem key={task.id} task={task}/>
+          <TaskItem 
+          key={task.id} 
+          task={task}
+          onDelete={onDelete}
+          />
         ))
       }
     </div>

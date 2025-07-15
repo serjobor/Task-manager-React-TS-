@@ -1,6 +1,7 @@
 import { type FC } from "react";
 import '../styles/TaskItem.css'
 import { useNavigate } from 'react-router-dom';
+import trashIcon from '../assets/trashIcon.png'
 
 import type {ITask} from './types/types'
 
@@ -13,7 +14,7 @@ function getColor(nameTag:string): string {
     'Test': 'test',
 
     'To Do': 'todo',
-    'In Progress': 'in-progress',
+    'In Progress': 'progress',
     'Done': 'done',
 
     'Low': 'low',
@@ -32,18 +33,24 @@ function getColor(nameTag:string): string {
 
 interface TaskItemProps {
   task: ITask;
+  onDelete: (taskId: number) => void;
 }
 
-const TaskItem: FC<TaskItemProps> = ({task}) => {
+const TaskItem: FC<TaskItemProps> = ({task, onDelete}) => {
   const router = useNavigate();
+
+  const handleDelete = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onDelete(task.id);
+  };
 
   return (
     <>
       <div>
-        <div className='taskItem'>
+        <div className='taskItem' onClick={() => {router(`./task/${task.id}`)}}>
           <div className='taskItem__head'>
           <h2 className='taskItem__title'>{task.id}. {task.title}</h2>
-          <button className='edit__btn' onClick={() => {router(`./task/${task.id}`)}}>Edit</button>
+          <img className='trashIcon' onClick={handleDelete} src={trashIcon} alt="trashIcon" />
           </div>
           <div className='taskItem__info'>
             <div className='category'>
@@ -64,6 +71,8 @@ const TaskItem: FC<TaskItemProps> = ({task}) => {
             </div>
           </div>
           <div className='taskItem__description'>Description: {task.description}</div>
+
+          <div style={{marginTop: 20}}>Date created: {task.dateCreated}</div>
         </div>
       </div>
       </>

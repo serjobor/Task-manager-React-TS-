@@ -1,6 +1,7 @@
 import TaskList from '../components/TaskList'
 import type { ITask } from '../components/types/types'
 import '../styles/TaskList.css';
+import { useState } from 'react';
 
 export const arrTemplate: ITask[] = [
   {
@@ -10,6 +11,7 @@ export const arrTemplate: ITask[] = [
     status: "To Do",
     priority: "Low",
     description: "description",
+    dateCreated: 'test0'
   },
   {
     id: 1,
@@ -18,6 +20,7 @@ export const arrTemplate: ITask[] = [
     status: "In Progress",
     priority: "Medium",
     description: "description",
+    dateCreated: 'test1'
   },
   {
     id: 2,
@@ -26,6 +29,7 @@ export const arrTemplate: ITask[] = [
     status: "Done",
     priority: "High",
     description: "description",
+    dateCreated: 'test2'
   },
   {
     id: 3,
@@ -34,6 +38,7 @@ export const arrTemplate: ITask[] = [
     status: "In Progress",
     priority: "Medium",
     description: "description",
+    dateCreated: 'test3'
   },
   {
     id: 4,
@@ -42,13 +47,23 @@ export const arrTemplate: ITask[] = [
     status: "Done",
     priority: "High",
     description: "description",
+    dateCreated: 'test4'
   },
 ];
 
 function AllTasks() {
+  const [tasks, setTasks] = useState<ITask[]>(arrTemplate);
+
+  const handleDeleteTask = (taskId: number) => {
+    setTasks(tasks.filter(task => task.id !== taskId));
+  };
+
   return (
     <div className="all-tasks-container">
-      <TaskList tasks={arrTemplate}/>    
+      <TaskList 
+      tasks={tasks}
+      onDelete={handleDeleteTask}
+      />    
     </div>
   )
 }

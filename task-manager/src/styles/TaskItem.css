@@ -60,7 +60,7 @@
   color: #34495e;
 }
 
-.edit__btn {
+/* .edit__btn {
   background: #3498db;
   color: white;
   border: none;
@@ -74,4 +74,8 @@
 
 .edit__btn:hover {
   background: #2980b9;
+} */
+
+.trashIcon {
+  cursor: pointer;
 }

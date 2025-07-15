@@ -16,7 +16,7 @@ function getColor(nameTag:string): string {
     'Test': 'test',
 
     'To Do': 'todo',
-    'In Progress': 'in-progress',
+    'In Progress': 'progress',
     'Done': 'done',
 
     'Low': 'low',
