@@ -1,16 +1,21 @@
-// import React from 'react';
-// import classes from './MyButton.module.css';
+import { type FC, type ButtonHTMLAttributes } from 'react';
+import classes from './MyButton.module.css';
 
-// interface textInBtn {
-//     children: React.ReactNode;
-// }
+interface MyButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    type: 'submit' | 'button';
+    buttonText: string;
+    onClick?: () => void
+}
 
-// const MyButton = ({children, ...props}: textInBtn) => {
-//     return (
-//         <button className={classes.btn}>
-//             {children}
-//         </button>
-//     );
-// };
+export const MyButton: FC<MyButtonProps> = ({type, buttonText, onClick}) => {
+    return (
+        <button 
+            type={type} 
+            className={classes.button}
+            onClick={onClick}>
+                {buttonText}
+        </button>
+    );
+};
 
 // export default MyButton;

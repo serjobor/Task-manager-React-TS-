@@ -7,13 +7,6 @@
   margin: 0 auto;
 }
 
-h1 {
-  text-align: center;
-  color: #2c3e50;
-  margin: 20px 0;
-  font-size: 2.5rem;
-}
-
 .taskItem {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }

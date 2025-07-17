@@ -1,4 +1,4 @@
-.task-card {
+.task-form {
   max-width: 800px;
   margin: 30px auto;
   padding: 20px;
@@ -7,7 +7,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.task-card h1 {
+.task-form h1 {
   color: #2c3e50;
   text-align: center;
   margin-bottom: 30px;
@@ -42,11 +42,9 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
-
-  
 }
 
-.select__block > div:first-child {
+.select__title {
   font-weight: 600;
   color: #34495e;
 }
@@ -66,7 +64,7 @@
   outline: none;
 }
 
-.form button {
+/* .form button {
   padding: 12px 20px;
   border: none;
   border-radius: 5px;
@@ -92,7 +90,7 @@
 
 .form button[type="button"]:hover {
   background: #c0392b;
-}
+} */
 
 .button-group {
   display: flex;
