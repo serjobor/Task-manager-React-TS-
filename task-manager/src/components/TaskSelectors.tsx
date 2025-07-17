@@ -1,4 +1,4 @@
-import React, { type FC } from "react";
+import { type FC } from "react";
 import { MySelect } from "./UI/select";
 import type { ITask } from "./types";
 

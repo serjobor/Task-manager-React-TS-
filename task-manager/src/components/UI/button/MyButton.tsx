@@ -1,4 +1,4 @@
-import React, { type FC, type ButtonHTMLAttributes } from 'react';
+import { type FC, type ButtonHTMLAttributes } from 'react';
 import classes from './MyButton.module.css';
 
 interface MyButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
