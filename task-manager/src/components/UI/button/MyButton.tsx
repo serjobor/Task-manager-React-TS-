@@ -7,7 +7,7 @@ interface MyButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     onClick?: () => void
 }
 
-export const MyButton: FC<MyButtonProps> = ({type, buttonText, onClick, ...props}) => {
+export const MyButton: FC<MyButtonProps> = ({type, buttonText, onClick}) => {
     return (
         <button 
             type={type} 
