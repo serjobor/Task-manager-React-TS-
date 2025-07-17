@@ -1,14 +1,14 @@
 import { Routes, Route} from 'react-router-dom'
+import TaskForm from '../pages/TaskForm'
+import HomePage from '../pages/HomePage';
 
-import AllTasks from '../pages/AllTasks'
-import TaskCard from '../pages/TaskCard'
 const AppRouter = () => {
   return (
     <>
     <Routes>
-      <Route path="/" element={<AllTasks/>}></Route>
-      <Route path='/task/:id' element={ <TaskCard/>}></Route>
-      <Route path="*" element={<AllTasks/>} />
+      <Route path="/" element={<HomePage/>}></Route>
+      <Route path="/task/:id?" element={<TaskForm />} />
+      <Route path="*" element={<HomePage/>} />
     </Routes>
     </>
   );

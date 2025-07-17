@@ -13,6 +13,13 @@ body {
   line-height: 1.6;
 }
 
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin: 20px 0;
+  font-size: 2.5rem;
+}
+
 /* цвета для тегов */
 .bug { background: #e74c3c; color: white; }
 .feature { background: #2ecc71; color: white; }
@@ -27,16 +34,26 @@ body {
 .low { background: #bdc3c7; color: #2c3e50; }
 .medium { background: #f39c12; color: white; }
 .high { background: #e74c3c; color: white; }
+/*  */
 
-/* Стили для селектов в форме */
-.select__options {
-  padding: 8px 12px;
-  border-radius: 4px;
-  border: 1px solid #ddd;
-  appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right 8px center;
-  background-size: 1em;
-  cursor: pointer;
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-task-button {
+  max-width: 150px;
+  padding: 10px 20px;
+  background-color: #2ecc71;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.add-task-button:hover {
+  background-color: #27ae60;
 }

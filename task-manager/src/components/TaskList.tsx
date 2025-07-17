@@ -4,7 +4,6 @@ import '../styles/TaskList.css'
 import type {ITask} from './types/types'
 import TaskItem from './TaskItem'
 
-
 interface TaskLisTProps {
   tasks: ITask[];
   onDelete: (taskId: number) => void;
@@ -13,8 +12,6 @@ interface TaskLisTProps {
 const TaskList: FC<TaskLisTProps> = ({tasks, onDelete}) => {
   return (
     <>    
-    <h1>Task List</h1>
-
     <div className='task__list'>
       {
         tasks.map((task) => (
