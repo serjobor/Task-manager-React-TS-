@@ -26,14 +26,28 @@
     /* Path Aliases */
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"],
-      "@store": ["src/app/store"],
-      "@hooks": ["src/app/hooks"],
-      "@components/*": ["./src/components/*"],
-      "@features/*": ["./src/features/*"],
+      "@store": ["src/app/store/store"],
+      "@hooks": ["src/app/store/hooks"],
+
+      "@AppRouter": ["./src/app/AppRouter"],
+
+      "@trashIcon": ["./src/assets/trashIcon.png"],
+
+      "@types": ["src/entities/task/types"],
+      "@TaskInfoBlock": ["src/entities/task/TaskInfoBlock"],
+
+      "@tasksSlice": ["./src/features/tasks/model/tasksSlice"],
+
+      "@TaskItem": ["./src/features/tasks/UI/TaskItem"],
+      "@TaskList": ["./src/features/tasks/UI/TaskList"],
+      "@TaskSelectors": ["./src/features/tasks/UI/TaskSelectors"],
+
       "@pages/*": ["src/pages/*"],
+
+      "@MyButton": ["./src/shared/UI/button"],
+      "@MySelect": ["./src/shared/UI/select"],
+
       "@styles/*": ["./src/styles/*"],
-      "@types": ["./src/components/types"],
     }
   },
   "include": ["src"]

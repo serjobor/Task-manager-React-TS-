@@ -7,14 +7,28 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@store': path.resolve(__dirname, './src/app/store'),
-      '@hooks': path.resolve(__dirname, './src/app/hooks'),
-      '@components': path.resolve(__dirname, './src/components'),
-      '@features': path.resolve(__dirname, './src/features'),
+      '@store': path.resolve(__dirname, './src/app/store/store'),
+      '@hooks': path.resolve(__dirname, './src/app/store/hooks'),
+      
+      '@AppRouter': path.resolve(__dirname, './src/app/AppRouter'),
+
+      '@trashIcon': path.resolve(__dirname, './src/assets/trashIcon.png'),
+
+      '@types': path.resolve(__dirname, 'src/entities/task/types'),
+      '@TaskInfoBlock': path.resolve(__dirname, 'src/entities/task/TaskInfoBlock'),
+
+      '@tasksSlice': path.resolve(__dirname, './src/features/tasks/model/tasksSlice'),
+
+      '@TaskItem': path.resolve(__dirname, './src/features/tasks/UI/TaskItem'),
+      '@TaskList': path.resolve(__dirname, './src/features/tasks/UI/TaskList'),
+      '@TaskSelectors': path.resolve(__dirname, './src/features/tasks/UI/TaskSelectors'),
+
       '@pages': path.resolve(__dirname, './src/pages'),
+      
+      '@MyButton': path.resolve(__dirname, './src/shared/UI/button'),
+      '@MySelect': path.resolve(__dirname, './src/shared/UI/select'),
+
       '@styles': path.resolve(__dirname, './src/styles'),
-      '@types': path.resolve(__dirname, './src/components/types'),
     }
   }
 })

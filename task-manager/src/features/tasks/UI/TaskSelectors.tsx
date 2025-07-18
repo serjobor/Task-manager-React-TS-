@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import { MySelect } from "./UI/select";
+import { MySelect } from "@MySelect";
 import type { ITask } from "@types";
 
 interface TaskSelectorsProps {

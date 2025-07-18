@@ -1,10 +1,10 @@
 import { type FC} from "react";
 import '@styles/TaskItem.css'
 import { useNavigate } from 'react-router-dom';
-import trashIcon from '../assets/trashIcon.png'
+import trashIcon from '../../../assets/trashIcon.png';
 
 import type {ITask} from '@types'
-import TaskInfoBlock from "./TaskInfoBlock";
+import TaskInfoBlock from "@TaskInfoBlock";
 
 interface TaskItemProps {
   task: ITask;

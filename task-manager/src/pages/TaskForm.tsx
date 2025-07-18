@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '@hooks'
-import { createTask, updateTask, selectTaskById } from '@features/tasks/tasksSlice'
-import type { ITask } from '@components/types'
-import { MyButton } from '@components/UI/button'
+import { createTask, updateTask, selectTaskById } from '@tasksSlice'
+import type { ITask } from '@types'
+import { MyButton } from '@MyButton'
 import '@styles/TaskForm.css'
-import TaskSelectors from '@components/TaskSelectors'
+import TaskSelectors from '@TaskSelectors'
 
 const TaskForm = () => {
   const { id } = useParams<{ id?: string }>();

@@ -2,7 +2,7 @@ import { type FC } from 'react'
 
 import '@styles/TaskList.css'
 import type {ITask} from '@types'
-import TaskItem from './TaskItem'
+import TaskItem from '@TaskItem'
 
 interface TaskLisTProps {
   tasks: ITask[];
