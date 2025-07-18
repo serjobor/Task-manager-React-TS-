@@ -1,14 +1,19 @@
 import { configureStore } from '@reduxjs/toolkit';
-import tasksReducer from '@tasksSlice';
+import tasksReducer, { type TasksState } from '@tasksSlice';
 
-// const loadState = () => {
-//   try {
-//     const serializedState = localStorage.getItem('reduxState');
-//     return serializedState ? JSON.parse(serializedState) : undefined;
-//   } catch (err) {
-//     return undefined;
-//   }
-// };
+// Определите тип корневого состояния
+export interface RootState {
+  tasks: TasksState;
+}
+
+const loadState = (): RootState | undefined => {
+  try {
+    const serializedState = localStorage.getItem('reduxState');
+    return serializedState ? JSON.parse(serializedState) : undefined;
+  } catch (err) {
+    return undefined;
+  }
+};
 
 const saveState = (state: RootState) => {
   try {
@@ -19,17 +24,22 @@ const saveState = (state: RootState) => {
   }
 };
 
-// const preloadedState = loadState()
+const preloadedState = loadState();
 
 export const store = configureStore({
   reducer: {
     tasks: tasksReducer
-  }
+  },
+  preloadedState: loadState()
 })
 
 store.subscribe(() => {
   saveState(store.getState());
 });
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+// Подписка на изменения store для сохранения в localStorage
+store.subscribe(() => {
+  saveState(store.getState());
+});
+
+export type AppDispatch = typeof store.dispatch;

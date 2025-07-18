@@ -2,7 +2,7 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { ITask } from '@types';
 // import type { RootState } from '@reduxjs/toolkit/query';
 
-interface TasksState {
+export interface TasksState {
   tasks: ITask[];
 }
 
