@@ -24,7 +24,7 @@ const saveState = (state: RootState) => {
   }
 };
 
-const preloadedState = loadState();
+// const preloadedState = loadState();
 
 export const store = configureStore({
   reducer: {
