@@ -25,7 +25,7 @@
 - Сборщик проекта: Vite
 - UI-фреймворк: AdmiralDS
 - Инструменты стилизации: CSS Modules
-Также:
+## Также:
 - Path Aliases (добавлены)
 - PostCSS (добавлен)
 - Autoprefixer (в процессе)
