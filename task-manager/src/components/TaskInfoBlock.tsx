@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import type { ITask } from "./types/types";
+import type { ITask } from "@types";
 
 const arrTags: object = {
     'Bug': 'bug',

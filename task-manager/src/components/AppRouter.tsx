@@ -1,6 +1,6 @@
 import { Routes, Route} from 'react-router-dom'
-import TaskForm from '../pages/TaskForm'
-import HomePage from '../pages/HomePage';
+import TaskForm from '@pages/TaskForm'
+import HomePage from '@pages/HomePage';
 
 const AppRouter = () => {
   return (

@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type { ITask } from '../../components/types/types';
+import type { ITask } from '@components/types';
 // import type { RootState } from '@reduxjs/toolkit/query';
 
 interface TasksState {
