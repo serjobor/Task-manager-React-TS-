@@ -32,7 +32,7 @@ const TaskItem: FC<TaskItemProps> = ({task, onDelete}) => {
           </div>
           <div className='taskItem__description'>Description: {task.description}</div>
 
-          <div style={{marginTop: 20}}>Date created: {task.dateCreated}</div>
+          <div>Date created: {task.dateCreated}</div>
         </div>
       </div>
       </>

@@ -64,7 +64,7 @@ export const tasksSlice = createSlice({
       const newTask: ITask = {
         ...action.payload,
         id: Date.now(),
-        dateCreated: new Date().toLocaleString()
+        dateCreated: new Date().toLocaleDateString()
       };
       state.tasks.push(newTask);
     },

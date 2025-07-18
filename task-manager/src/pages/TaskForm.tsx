@@ -8,62 +8,62 @@ import '../styles/TaskForm.css'
 import TaskSelectors from '../components/TaskSelectors'
 
 const TaskForm = () => {
-  const { id } = useParams<{ id?: string }>()
-  const dispatch = useAppDispatch()
-  const navigate = useNavigate()
+  const { id } = useParams<{ id?: string }>();
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   
   const existingTask = useAppSelector(state => 
     id ? selectTaskById(state, Number(id)) : null
-  )
+  );
 
   const [formData, setFormData] = useState<Omit<ITask, 'id'>>( () => {
     if (existingTask) {
-      const { id, ...rest } = existingTask
-      return rest
-    }
+      const { id, ...rest } = existingTask;
+      return rest;
+    };
     return {
       title: '',
       category: 'Bug',
       status: 'To Do',
       priority: 'Low',
       description: '',
-      dateCreated: new Date().toLocaleString()
-    }
+      dateCreated: new Date().toLocaleDateString(),
+    };
   })
 
   useEffect(() => {
     if (existingTask) {
       const { id, ...rest } = existingTask
       setFormData(rest)
-    }
-  }, [existingTask])
+    };
+  }, [existingTask]);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
-  }
+  };
 
   const handleSelectChange = (field: keyof ITask, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))
-  }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     
     if (!formData.title.trim()) {
-      alert('error itle is missing')
+      alert('error title is missing')
       return
-    }
+    };
 
     if (id !== 'new') {
       dispatch(updateTask({ ...formData, id: Number(id) }))
     } else {
       dispatch(createTask(formData))
-    }
+    };
     
-    navigate('/')
+    navigate('/');
   }
 
   const handleCancel = () => {
