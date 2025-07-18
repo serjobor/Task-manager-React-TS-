@@ -1,10 +1,10 @@
 import { type FC} from "react";
-import '../styles/TaskItem.css'
+import '@styles/TaskItem.css'
 import { useNavigate } from 'react-router-dom';
-import trashIcon from '../assets/trashIcon.png'
+import trashIcon from '../../../assets/trashIcon.png';
 
-import type {ITask} from './types/types'
-import TaskInfoBlock from "./TaskInfoBlock";
+import type {ITask} from '@types'
+import TaskInfoBlock from "@TaskInfoBlock";
 
 interface TaskItemProps {
   task: ITask;
@@ -32,7 +32,7 @@ const TaskItem: FC<TaskItemProps> = ({task, onDelete}) => {
           </div>
           <div className='taskItem__description'>Description: {task.description}</div>
 
-          <div style={{marginTop: 20}}>Date created: {task.dateCreated}</div>
+          <div>Date created: {task.dateCreated}</div>
         </div>
       </div>
       </>

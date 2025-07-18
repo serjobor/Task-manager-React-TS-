@@ -1,6 +1,6 @@
 import { type FC } from "react";
-import { MySelect } from "./UI/select";
-import type { ITask } from "./types";
+import { MySelect } from "@MySelect";
+import type { ITask } from "@types";
 
 interface TaskSelectorsProps {
     formData:Omit<ITask, "id">;

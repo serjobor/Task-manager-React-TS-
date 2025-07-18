@@ -21,7 +21,34 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    /* Path Aliases */
+    "baseUrl": "./",
+    "paths": {
+      "@store": ["src/app/store/store"],
+      "@hooks": ["src/app/store/hooks"],
+
+      "@AppRouter": ["./src/app/AppRouter"],
+
+      "@trashIcon": ["./src/assets/trashIcon.png"],
+
+      "@types": ["src/entities/task/types"],
+      "@TaskInfoBlock": ["src/entities/task/TaskInfoBlock"],
+
+      "@tasksSlice": ["./src/features/tasks/model/tasksSlice"],
+
+      "@TaskItem": ["./src/features/tasks/UI/TaskItem"],
+      "@TaskList": ["./src/features/tasks/UI/TaskList"],
+      "@TaskSelectors": ["./src/features/tasks/UI/TaskSelectors"],
+
+      "@pages/*": ["src/pages/*"],
+
+      "@MyButton": ["./src/shared/UI/button"],
+      "@MySelect": ["./src/shared/UI/select"],
+
+      "@styles/*": ["./src/styles/*"],
+    }
   },
   "include": ["src"]
 }

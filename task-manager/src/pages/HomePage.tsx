@@ -1,8 +1,8 @@
-import { useAppSelector, useAppDispatch } from '../app/hooks';
-import { deleteTask } from '../features/tasks/tasksSlice';
+import { useAppSelector, useAppDispatch } from '@hooks';
+import { deleteTask } from '@tasksSlice';
 import { Link } from 'react-router-dom';
-import TaskList from '../components/TaskList'
-import '../styles/TaskList.css';
+import TaskList from '@TaskList'
+import '@styles/TaskList.css';
 
 
 function HomePage() {
