@@ -10,48 +10,48 @@ const initialState: TasksState = {
   tasks: [
     {
     id: 0,
-    title: "Title Task",
+    title: "a Title Task0",
     category: "Bug",
     status: "To Do",
     priority: "Low",
     description: "description",
-    dateCreated: 'test0'
+    dateCreated: '01.01.2025'
   },
   {
     id: 1,
-    title: "Title Task",
+    title: "b Title Task1",
     category: "Feature",
     status: "In Progress",
     priority: "Medium",
     description: "description",
-    dateCreated: 'test1'
+    dateCreated: '02.01.2025'
   },
   {
     id: 2,
-    title: "Title Task",
+    title: "c Title Task2",
     category: "Documentation",
     status: "Done",
     priority: "High",
     description: "description",
-    dateCreated: 'test2'
+    dateCreated: '03.01.2025'
   },
   {
     id: 3,
-    title: "Title Task",
+    title: "d Title Task3",
     category: "Refactor",
     status: "In Progress",
     priority: "Medium",
     description: "description",
-    dateCreated: 'test3'
+    dateCreated: '04.01.2025'
   },
   {
     id: 4,
-    title: "Title Task",
+    title: "i Title Task4",
     category: "Test",
     status: "Done",
     priority: "High",
     description: "description",
-    dateCreated: 'test4'
+    dateCreated: '05.01.2025'
   },
   ],
 };
