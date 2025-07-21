@@ -4,13 +4,14 @@ import type { ITask } from '@types';
 
 export interface TasksState {
   tasks: ITask[];
+  searchTerm: string;
 }
 
 const initialState: TasksState = {
   tasks: [
     {
     id: 0,
-    title: "a Title Task0",
+    title: "a Title Task 1",
     category: "Bug",
     status: "To Do",
     priority: "Low",
@@ -19,7 +20,7 @@ const initialState: TasksState = {
   },
   {
     id: 1,
-    title: "b Title Task1",
+    title: "b Title Task 12",
     category: "Feature",
     status: "In Progress",
     priority: "Medium",
@@ -28,7 +29,7 @@ const initialState: TasksState = {
   },
   {
     id: 2,
-    title: "c Title Task2",
+    title: "c Title Task 123",
     category: "Documentation",
     status: "Done",
     priority: "High",
@@ -37,7 +38,7 @@ const initialState: TasksState = {
   },
   {
     id: 3,
-    title: "d Title Task3",
+    title: "d Title Task 34",
     category: "Refactor",
     status: "In Progress",
     priority: "Medium",
@@ -46,7 +47,7 @@ const initialState: TasksState = {
   },
   {
     id: 4,
-    title: "i Title Task4",
+    title: "i Title Task 345",
     category: "Test",
     status: "Done",
     priority: "High",
@@ -54,6 +55,7 @@ const initialState: TasksState = {
     dateCreated: '05.01.2025'
   },
   ],
+  searchTerm: '',
 };
 
 export const tasksSlice = createSlice({
@@ -77,10 +79,14 @@ export const tasksSlice = createSlice({
         state.tasks[index] = action.payload;
       }
     },
+
+    searchTasks: (state, action: PayloadAction<string>) => {
+    state.searchTerm = action.payload;
+    },
   },
 });
 
-export const { createTask, deleteTask, updateTask } = tasksSlice.actions;
+export const { createTask, deleteTask, updateTask, searchTasks } = tasksSlice.actions;
 export default tasksSlice.reducer;
 
 export const selectTaskById = (state: { tasks: TasksState }, taskId: number) =>
