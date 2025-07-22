@@ -1,51 +1,45 @@
+import { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from '@hooks';
-import { deleteTask, searchTasks } from '@tasksSlice';
+import { fetchTasks, deleteTask } from '@tasksSlice';
 import { Link } from 'react-router-dom';
-import TaskList from '@TaskList'
+import TaskList from '@TaskList';
 import '@styles/TaskList.css';
-
+import SearchBar from '../features/tasks/UI/SearchBar';
 
 function HomePage() {
-  const tasks = useAppSelector(state => state.tasks.tasks);
+  const { tasks, searchQuery, loading, error } = useAppSelector(state => state.tasks);
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    if (!searchQuery) {
+      dispatch(fetchTasks());
+    }
+  }, [dispatch, searchQuery]);
 
   const handleDeleteTask = (taskId: number) => {
     dispatch(deleteTask(taskId));
   };
 
-  const searchTerm = useAppSelector(state => state.tasks.searchTerm);
-  const filteredTasks = tasks.filter(task => 
-    task.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(searchTasks(e.target.value));
-  };   
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className='all-tasks-container'>
+    <div className="all-tasks-container">
       <div className='header-container'>
         <h1>Task List</h1>
-        <div className='search-add-container'>
-          <input
-            type="text"
-            placeholder="Search tasks..."
-            value={searchTerm}
-            onChange={handleSearch}
-            className="search-input"
-          />
-          <Link to='/task/new' className='add-task-button'>
-            Add New Task
-          </Link>
-        </div>
+        <Link to="/task/new" className="add-task-button">
+          Add New Task
+        </Link>
       </div>
 
+      <SearchBar/>
+
       <TaskList 
-        tasks={filteredTasks}
+        tasks={tasks}
         onDelete={handleDeleteTask}
       />    
     </div>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;

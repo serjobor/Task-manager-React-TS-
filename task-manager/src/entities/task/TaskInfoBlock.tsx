@@ -1,6 +1,12 @@
 import { type FC } from "react";
 import type { ITask } from "@types";
 
+/* TaskInfoBlock
+Category      Bug
+Status        To Do
+Priority      Low
+*/
+
 const arrTags: object = {
     'Bug': 'bug',
     'Feature': 'feature',
